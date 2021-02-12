@@ -1,0 +1,134 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href='/stylesheets/steps.css' />
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="sidenav">
+  {{!-- <div class="login-main-text">
+    <h2>Application<br> Login Page</h2>
+    <p>Login or register from here to access.</p>
+  </div> --}}
+  <img src="images/preview.png" alt="" srcset="">
+</div>
+
+<div class="main">
+  <div class="row mt-2">
+    <ul class="progressbar">
+      <li class="active">login</li>
+      <li>choose interest</li>
+      <li>add friends</li>
+      <li>View map</li>
+    </ul>
+  </div>
+  <h1>Welcome to Intego B2B Console!</h1>
+  <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga fugit, temporibus, dignissimos enim libero
+    sapiente,
+    odio pariatur at ad eveniet porro commodi dolorum! Fugiat magni odit accusantium neque incidunt esse.Labore illo</p>
+  {{!-- <div class="col-md-6 col-sm-12"> --}}
+    <div class="login-form">
+      <form id="basic-form" action="" method="post">
+        <div class="row">
+
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="email">Admin EMail </label>
+            <input id="email" class="form-control" type="email" name="email" required>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="name">Admin Name <span> </span></label>
+            <input id="name" class="form-control" name="name" minlength="3" type="text" required>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="company">Company Name <span> </span></label>
+            <input id="company" class="form-control" name="company" minlength="3" type="text" required>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <label for="password">Admin Password </label>
+            <input id="password" class="form-control" type="password" minlength="6" name="password" required>
+          </div>
+        </div>
+
+        <p>
+          <input class="btn btn-info submit" type="submit" value="SUBMIT">
+        </p>
+      </form>
+
+
+    </div>
+    {{!--
+  </div> --}}
+</div>
+
+
+
+<script>
+
+
+
+  $.validator.addMethod("includeName", function (value) {
+    let names = $("#name").val().split(" ")
+    if (value && names.some(n => value.includes(n))) return false;
+    //if (value && value.includes($("#name").val())) return false;
+    return true;
+  })
+  $.validator.addMethod("pwcheck", function (value) {
+    return /[a-z]/.test(value) // has a lowercase letter
+      && /[A-Z]/.test(value) // has a uppercase letter
+      && /\d/.test(value) // has a digit
+  });
+
+
+  $(document).ready(function () {
+    $(document).ready(function () {
+      $("#basic-form").validate({
+
+        messages: {
+          name: {
+            minlength: "Name should be at least 3 characters"
+          },
+          email: {
+            email: "The email should be in the format: abc@domain.tld"
+          },
+          password: {
+            pwcheck: "Password should contain a lowercase , Uppercase , Number",
+            includeName: "Password cannot include First or Last Name"
+          }
+        },
+        rules: {
+          name: {
+            required: true,
+            minlength: 3
+          },
+          age: {
+            required: true,
+            number: true,
+            min: 18
+          },
+          email: {
+            required: true,
+            email: true
+          },
+          password: {
+            required: true,
+            pwcheck: true,
+            includeName: true,
+            minlength: 8
+          },
+          _password: {
+            minlength: 8,
+            lowerCase: {
+              depends: function (elem) {
+
+                return hasLowerCase($("#password").val())
+              }
+            },
+            number: true,
+            min: 0
+          }
+        }
+      });
+    });
+  });
+
+</script>
