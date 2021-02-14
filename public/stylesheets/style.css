@@ -6,40 +6,33 @@
 a {
   color: #00B7FF;
 }
-
+html,
 body {
   font-family: "Lato", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 
 
-.main-head{
-  height: 150px;
-  background: #FFF;
- 
-}
-
-.sidenav {
-  /* height: 100%; */
   /* padding: 30px; */
   /* background-color: #000; */
-  overflow-x: hidden;
   /* padding-top: 20px; */
-}
-
-.sidenav img {
-  width:  -webkit-fill-available;
     /* padding  :40px;   */
-}
-.main {
-  padding: 0px 10px;
-}
 
-@media screen and (max-height: 450px) {
-  /* .sidenav {padding-top: 15px;} */
-}
+/* @media screen and (max-height: 450px) {
+  /* .sidenav {padding-top: 15px;} } */
+  
+  .progressbar {
+    margin-top: 10px;
+    
+    counter-reset: step;
+   
+  }
+  .purple {margin-top: 20px;}
 
 @media screen and (max-width: 450px) {
+  
   .login-form{
       margin-top: 10%;
   }
@@ -50,18 +43,12 @@ body {
 }
 
 @media screen and (min-width: 768px){
-  .main{
-      margin-left: 40%; 
+  .progressbar {
+    width: 100%;
+  
   }
-
-  .sidenav{
-    overflow-y: hidden;
-      width: 40%;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-  }
+  .purple {margin-top: 10px;}
+   
 
   .login-form{
       /* margin-top: 80%; */
@@ -77,6 +64,7 @@ body {
   /* margin-top: 20%; */
   padding: 60px;
   color: #fff;
+
 }
 
 .login-main-text h2{
@@ -86,4 +74,60 @@ body {
 .btn-black{
   background-color: #000 !important;
   color: #fff;
+}
+
+
+span[class$="error"] , label[class$="error"] {
+  color: rgb(146, 29, 29);
+}
+
+.buttonload {
+  display: none;
+ 
+}
+
+/* Add a right margin to each icon */
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
+#password-server-error {
+  display: none;
+}
+label , .purple-text {
+color: rgb(62, 24, 151);
+
+}
+.purple-text { font-weight: 600;}
+.purple  {
+  background-color: rgb(62, 24, 151);
+  border-color: rgb(62, 24, 151);
+  padding: 9px 30px;
+  border-radius: 20px;
+}
+ .purple:focus {
+  box-shadow: 0 0 0 0.2rem #172db85e;
+ }
+
+ .purple:hover  {
+  background-color: rgb(28, 9, 73);
+  border-color: rgb(62, 24, 151);
+}
+
+.purple:active  {
+  background-color: rgb(171, 137, 250) !important;
+  border-color: rgb(62, 24, 151);
+}
+
+
+.right-col {
+  height: 100vh;
+  min-height: 800px;
+  background-image: url("/images/image3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  padding:9%;
 }

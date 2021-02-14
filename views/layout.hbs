@@ -3,12 +3,47 @@
 
 <head>
   <title>{{title}}</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href='/stylesheets/steps.css' />
+  <script src="/javascripts/options.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 </head>
 
 <body>
-  {{{body}}}
+
+  <div class="row no-gutters" style="height:98vh">
+
+    <div class="col-md-12  col-lg-4   text-center right-col">
+
+      {{!-- <div class="login-main-text">
+        <h2>Application<br> Login Page</h2>
+        <p>Login or register from here to access.</p>
+      </div> --}}
+      {{!-- <img src="" class="img-fluid  mx-auto" style="width:100%"> --}}
+    </div>
+    <div class="col-md-12 col-lg-8" style="overflow: hidden;">
+
+      <div class="row mt-2">
+        <ul class="progressbar">
+          <li class="step-login">login</li>
+          {{!-- <li>choose interest</li> --}}
+          {{!-- <li>add friends</li> --}}
+          <li class="step-finish"> finish</li>
+        </ul>
+      </div>
+
+      <div class="container">
+
+        {{{body}}}
+      </div>
+    </div>
+  </div>
+  </div>
 </body>
 
 </html>
